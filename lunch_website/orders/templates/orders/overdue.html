@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Overdue Orders</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Date</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for order in overdue_orders %}
+      <tr>
+        <td>{{ order.item.name }}</td>
+        <td>{{ order.order_date }}</td>
+        <td>Unpaid</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
